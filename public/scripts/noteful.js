@@ -80,12 +80,21 @@ const noteful = (function () {
 
       api.update(noteObj.id, noteObj, updateResponse => {
         store.currentNote = updateResponse;
-        api.search({}, response => {
-          store.notes = response;
-          render();
+        store.notes = store.notes.map(note => {
+          if(note.id === noteObj.id){
+            return noteObj;
+          } else {
+            return note;
+          }
         });
-      });
+        
+        // api.search({}, response => {
+        //   store.notes = response;
+        //   render();
+        // });
 
+        render();
+      });
     });
   }
 
