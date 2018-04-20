@@ -85,7 +85,6 @@ describe('GET /api/notes', function () {
           .then(function (res) {
             expect(res).to.exist;
             expect(res.body.id).to.equal(testId);
-            expect(res).to.have.status(200);
           });
       } else {
         return chai.request(app)
