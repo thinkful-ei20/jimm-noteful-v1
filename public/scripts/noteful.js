@@ -26,7 +26,7 @@ const noteful = (function () {
   }
 
   /**
-   * HELPERS
+   * HELPERSs
    */
   function getNoteIdFromElement(item) {
     const id = $(item).closest('.js-note-element').data('id');
